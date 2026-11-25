@@ -1,0 +1,567 @@
+/* 와이드 pc  */
+
+.videoBox{width:100%;height:100%; overflow:hidden; position:absolute}
+#videoBG {
+   position:fixed; /*고정=>fixed/ 스크롤처리=>absolute */
+   left:50%;
+   top:50%; /*오른쪽, 아래에 여백을 두지않고 꽉차게 표시*/
+   width:auto;
+   min-width:100%; /*동영상 너비를 꽉차게*/
+   height:auto;
+   min-height:100%; /*동영상 높이를 꽉차게*/
+  transform:translateX(-50%) translateY(-50%);
+   z-index:-100; /*다른요소보다 아래에 위치*/
+  
+}
+
+#imgBG{
+	position:fixed; /*고정=>fixed/ 스크롤처리=>absolute */
+   left:50%;
+   top:50%; /*오른쪽, 아래에 여백을 두지않고 꽉차게 표시*/
+   width:auto;
+   min-width:100%; /*동영상 너비를 꽉차게*/
+   height:auto;
+   min-height:100%; /*동영상 높이를 꽉차게*/
+  transform:translateX(-50%) translateY(-50%);
+   z-index:-100;
+   display:none
+}
+
+
+
+
+
+
+
+#content{ width:100%; margin:0; height:auto; background:rgba(0,0,0,.8); color: #fff; }
+#content .OVERVIEW{width: 96%; margin: 0 auto; position: relative; padding: 100px;}
+#content .OVERVIEW>div{display: flex; justify-content:space-between; flex-wrap: wrap; }
+#content .OVERVIEW div >a{position: absolute; width: 120px; height: 50px; font-size: var(--font-gnb-size); color: #fff;
+                           top: 200px; right: 5%;  text-align: center; }
+#content .OVERVIEW div span{display: block; width: 60%;}
+#content .OVERVIEW div img{width: 100%; height: 100%; object-fit: cover; object-position: center;}
+#content .OVERVIEW div >a:hover{text-shadow: 1px 1px 10px #eec911; scale: 1.1; color: #eec911 ;}
+#content .OVERVIEW div .tag::after{content: '';display: block; bottom: 0; right: 0; background: url(../images/main/atag.png) center no-repeat;
+                                    width: 35px; height: 20px; transform: translate(93px,3px);}
+#content .OVERVIEW div .tag::before{content: '';display: block; bottom: 0; right: 0; width: 95%; height: 4px;
+                                    transform: translateY(50px); background-color: rgb(184, 184, 184);}
+#content .OVERVIEW div .tag:hover::before{box-shadow: 0 0 10px black,0px 0px 10px #FFD400,0 0 5px #eec911; background: #eec911;}
+
+#content .OVERVIEW h3{font-size: 3.5rem; color: var(--color-main); padding: 30px
+                     ; font-family: 'Hitmarker Text', sans-serif; padding-top: 100px;}
+
+#content .OVERVIEW em{font-family: 'Hitmarker Text', sans-serif; font-weight: 300;}
+#content .OVERVIEW .text_box{ padding: 0 30px;width:40%;}
+#content .OVERVIEW .text_box .txt{font-size: 2.7rem; margin-bottom: 30px;margin-bottom: 30px; font-weight: 600;
+                                    font-family: 'Hitmarker Text', sans-serif;}
+#content .OVERVIEW .text_box >p{font-size:1.1rem; text-align: justify; line-height: 1.5; }
+#content .OVERVIEW ul{ display: grid;
+                     grid-template-columns: repeat(4,1fr);
+                     grid-template-columns: auto;
+                     grid-auto-rows: auto;
+                     margin-top: 20px;
+                     gap: 10px;
+                     grid-template-areas: 
+                     'e a a c'
+                     'b d f f'
+                     ;}
+ #content .OVERVIEW ul li{overflow: hidden;}    
+        #content .OVERVIEW ul li img{width: 100%; height: 100%; object-fit: cover; object-position:center; }
+         .OVERVIEW ul li:nth-child(1) p{font-size:1.1rem; font-weight: 400; line-height: 1.8rem; margin: 0 auto;
+                                       width: 92%; height: auto; display: flex; justify-content: space-between; }
+       .OVERVIEW ul li:nth-child(1){grid-area: a; }
+        .OVERVIEW ul li:nth-child(2){grid-area: b;}
+        .OVERVIEW ul li:nth-child(3){grid-area: c;}
+        .OVERVIEW ul li:nth-child(4){grid-area: d;}
+        .OVERVIEW ul li:nth-child(5){grid-area: e; }
+        .OVERVIEW ul li:nth-child(6){grid-area: f;}
+        
+        .OVERVIEW ul li:nth-child(6) img{width: 100%; height: 100%; }
+
+   #content .DMZ div{background: url(../images/main/DMZ_back.png) top right no-repeat;
+                     background-size: cover;  text-align: left; padding: 100px;}
+   #content .DMZ div h3{font-size: 3.5rem; width: 69%; margin-left: 50px; padding: 50px 10px; color: #FFD400;}
+   #content .DMZ div p{font-size:1.3rem; width: 69%; margin-left: 40px; padding: 30px;}
+   #content .DMZ ul{justify-content: center;
+                   display: grid; grid-template-columns: repeat(3,1fr) ;
+                     grid-auto-rows: auto; 
+                     margin-top: 20px;
+                     grid-template-areas: 
+                     'a c b'
+                     'a d b'
+                     ;}
+   #content .DMZ ul dl dt{font-size:2.2rem; color: #FFD400; font-weight: 500; }
+   #content .DMZ ul dl dd{font-size: var(--font-h5-size); margin-top: 30px;}
+   #content .DMZ ul dl{position: absolute; bottom:-100%; left: 0;  text-align: center; transition: .5s ease-out; width: 100%;height: 100%;background: rgba(0,0,0,.8); display: flex;flex-direction: column;justify-content: center; }
+   #content .DMZ ul li{margin: 0 auto; position: relative; overflow: hidden; transition: .3s ease-out;}
+   #content .DMZ ul li img{width: 100%; height: 100%; object-fit: cover; object-position: center;}
+   #content .DMZ ul li:hover dl{bottom: 0;}
+
+   
+   #content .DMZ ul li:nth-child(1){grid-area: a; filter: grayscale(10);}
+   #content .DMZ ul li:hover:nth-child(1){filter: grayscale(0);}
+   #content .DMZ ul li:nth-child(2){grid-area: b; filter: grayscale(10);}
+   #content .DMZ ul li:hover:nth-child(2){filter: grayscale(0);}
+   #content .DMZ ul li:nth-child(3){grid-area: c; filter: grayscale(10);}
+   #content .DMZ ul li:hover:nth-child(3){filter: grayscale(0);}
+   #content .DMZ ul li:nth-child(4){grid-area: d; filter: grayscale(10);}
+   #content .DMZ ul li:hover:nth-child(4){filter: grayscale(0);}
+   #content .DMZ div >a{ width: 120px; height: 50px; font-size: var(--font-gnb-size); color: #fff;
+                           top: 100px; left: 90%;  text-align: center; margin: 0 auto; margin-top: 50px;}
+   #content .DMZ div >a:hover{text-shadow: 1px 1px 10px #eec911; scale: 1.1; color: #eec911 ;}
+   #content .DMZ div .tag::after{content: '';display: block; bottom: 0; right: 0; background: url(../images/main/atag.png) center no-repeat;
+                                       width: 35px; height: 20px; transform: translate(93px,3px);}
+   #content .DMZ div .tag::before{content: '';display: block; bottom: 0; right: 0; width: 120px; height: 4px;
+                                       transform: translateY(50px); background-color: rgb(184, 184, 184);}
+   #content .DMZ div .tag:hover::before{box-shadow: 0 0 10px black,0px 0px 10px #FFD400,0 0 5px #eec911; background: #eec911;}
+   #content .WEAPON {width: 100%;  background: url(../images/main/wall1.png) center no-repeat;
+                     background-size: 100% 100%;  background-position: center;  text-align: center; }
+   #content .wp_wrap{ 
+      position: relative;
+    max-width: auto;
+    height: auto;
+    margin: 0 auto;
+    padding: 100px 30px; 
+    box-sizing: border-box;}
+   #content .WEAPON h3{font-size: 3.5rem;  font-weight: 500; color: #FFD400;
+                        margin-bottom: 50px; }
+   #content .WEAPON p{font-weight: 400; font-size: var(--font-gnb-size); width: 50%; margin: 0 auto; display: flex; justify-content: space-between;
+                     margin-bottom: 140px;}
+   
+   #content .WEAPON .container {justify-content: center;
+                    width: 100%;
+                   margin: 0 auto ;
+                     display: grid; grid-template-columns: repeat(4,1fr) ;
+                     grid-auto-rows: auto; 
+                     gap: 20px;
+                     margin-top: 20px;
+                     grid-template-areas: 
+                     'a a b m'
+                     'a a c d'
+                     'f e g g'
+                     'f h g g'
+                     'i j k l'
+                     ;}
+    
+  
+   #content .WEAPON ul .img1{background: url(../images/main/weapon_back\ _big.png) no-repeat; 
+                              background-size: cover; background-position: center; }
+   #content .WEAPON ul .img2{background: url(../images/main/weapon_back\ _big.png)top no-repeat;
+                           background-size: cover; background-position: center; }
+   #content .WEAPON ul .img3{background: url(../images/main/weapon_back\ _big.png)top no-repeat;
+                              background-size: cover; background-position: center; }
+   #content .WEAPON ul .img4{background: url(../images/main/weapon_back\ _big.png)top no-repeat;
+                              background-size: cover; background-position: center;}
+   #content .WEAPON ul .img5{background: url(../images/main/weapon_back\ _big.png)top no-repeat;
+                              background-size: cover; background-position: center;}
+   #content .WEAPON ul .img6{background: url(../images/main/weapon_back\ _big.png)top no-repeat;
+                              background-size: cover; background-position: center;}
+
+
+   #content .WEAPON .shoot li:nth-of-type(1) img{position: absolute; top:120vh; left: 10.5vh;}
+   #content .WEAPON .shoot li:nth-of-type(2) img{position: absolute; top:5vw; left: 80vmax;}
+   #content .WEAPON .shoot li:nth-of-type(3) img{position: absolute; top:30vw; left: 80vmax;transform: rotate(-25deg);}
+   #content .WEAPON .shoot li:nth-of-type(4) img{position: absolute; top:50vh; left: 120vh; }
+  
+
+  #content .WEAPON .shoot li {
+    opacity: 0;
+}
+
+/* 스크롤 시 나타나는 상태 */
+#content .WEAPON .shoot.scroll .shot {
+    opacity: 1;
+    transition: opacity .5s ease-out;
+    transition-delay: .5s;
+}
+
+  #content .WEAPON .shoot.scroll .shot{opacity: 1;}
+  #content .WEAPON .shoot.scroll .shot1{transition: all .3s ease-out; transition-delay: .2s; opacity: 1;}
+  #content .WEAPON .shoot.scroll .shot2{transition: all .3s ease-out; transition-delay: .3s; opacity: 1;}
+  #content .WEAPON .shoot.scroll .shot3{transition: .2s ease-out; transition-delay: .5s; opacity: 1;}
+   #content .WEAPON .container img{width: 100%; height: 100%; object-fit: cover; object-position: center;
+                                    filter: invert(90%)brightness(60%); outline: 1px solid #d1caca; transition: .3s ease-out;}
+   #content .WEAPON .container li:hover img{filter: invert(0%)brightness(100%); box-shadow: 1px 1px 10px #eec911; backdrop-filter: blur(2px);}
+   #content .WEAPON .container dl{padding: 50px 20px; text-align: left;}
+    #content .WEAPON .container li dt:first-of-type{font-size: var(--font-h5-size); font-weight: 300; color: #eec911; }
+    #content .WEAPON .container li dt:last-of-type{font-size: var(--font-h4-size); margin-top: 30px; font-weight: 600; margin-bottom: 10px;
+      border-top: 1px solid #d1cece; width: 350px; height: 50px; display: flex; align-items: center;}
+    #content .WEAPON .container li dd{font-size: var(--font-gnb-size);}
+   #content .WEAPON div >a{ width: 120px; height: 50px; font-size: var(--font-gnb-size); color: #fff;
+                           top: 100px; left: 90%;  text-align: center; margin: 0 auto; margin-top: 50px;}
+   #content .WEAPON div >a:hover{text-shadow: 1px 1px 10px #eec911; scale: 1.1; color: #eec911 ;}
+   #content .WEAPON div .tag::after{content: '';display: block; bottom: 0; right: 0; background: url(../images/main/atag.png) center no-repeat;
+                                       width: 35px; height: 20px; transform: translate(93px,3px);}
+   #content .WEAPON div .tag::before{content: '';display: block; bottom: 0; right: 0; width: 120px; height: 4px;
+                                       transform: translateY(50px); background-color: rgb(184, 184, 184);}
+   #content .WEAPON div .tag:hover::before{box-shadow: 0 0 10px black,0px 0px 10px #FFD400,0 0 5px #eec911; background: #eec911;}
+   #content .WEAPON .container  li:nth-child(1){grid-area: a;}
+   #content .WEAPON .container  li:nth-child(2){grid-area: b;}
+   #content .WEAPON .container  li:nth-child(3){grid-area: c;}
+   #content .WEAPON .container  li:nth-child(4){grid-area: d;}
+   #content .WEAPON .container  li:nth-child(5){grid-area: e;}
+   #content .WEAPON .container  li:nth-child(6){grid-area: f;}
+   #content .WEAPON .container  li:nth-child(7){grid-area: g;}
+   #content .WEAPON .container  li:nth-child(8){grid-area: h; text-align: right; }
+   #content .WEAPON .container  li:nth-child(9){grid-area: i;}
+   #content .WEAPON .container  li:nth-child(10){grid-area: j;}
+   #content .WEAPON .container  li:nth-child(11){grid-area: k;}
+   #content .WEAPON .container  li:nth-child(12){grid-area: l;}
+   #content .WEAPON .container  li:nth-child(13){grid-area: m;}
+
+   .swiper {
+        width: 100%;
+        height: 100%;
+        
+      }
+      .swiper-wrapper{padding-bottom: 60px;}
+      .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width:100%;
+        height: 100%;
+        object-fit: cover;
+      }
+     #content .TRAILER{ background: url(../images/main/wall2.png)no-repeat; background-size: 100% 100%; background-position: center; padding: 150px 0px;}
+      #content .TRAILER h3{font-size: 3.5rem;  text-align: center; color: #FFD400;
+                           padding: 50px;}
+      #content .TRAILER p{font-size: var(--font-gnb-size); text-align: center; margin-bottom: 50px;}
+   
+      .videoContent {position: relative;}
+      .videoContent .videoArea .playBtn img{width: 51px; height: 40px;border-radius: 15px;}
+      .videoContent .videoArea .playBtn{position: absolute; top: 45%;left: 45%; }
+       
+      #content .TRAILER >a{ width: 120px; height: 50px; font-size: var(--font-gnb-size); color: #fff;
+                           top: 100px; left: 90%;  text-align: center; margin: 0 auto; margin-top: 50px;}
+      #content .TRAILER >a:hover{text-shadow: 1px 1px 10px #eec911; scale: 1.1; color: #eec911 ;}
+      #content .TRAILER .tag::after{content: '';display: block; bottom: 0; right: 0; background: url(../images/main/atag.png) center no-repeat;
+                                          width: 35px; height: 20px; transform: translate(93px,3px);}
+      #content .TRAILER .tag::before{content: '';display: block; bottom: 0; right: 0; width: 120px; height: 4px;
+                                          transform: translateY(50px); background-color: rgb(184, 184, 184);}
+      #content .TRAILER .tag:hover::before{box-shadow: 0 0 10px black,0px 0px 10px #FFD400,0 0 5px #eec911; background: #eec911;}
+    
+      .swiper-pagination-bullet{background: #fff;}
+      .swiper-pagination-bullet-active {
+        color: #fff;
+        background: var(--color-main);
+      }
+      .popup_youtube{width: 100%; height: 100%; position: relative;}
+      .mfp-fade.mfp-bg {
+    opacity: 0;
+    transition: all .3s ease-out;
+}
+.mfp-wrap{display: flex; justify-content: center; align-items: center; text-align: center; 
+            width: 100%; height: 100%; z-index: 10;}
+/* 팝업 배경 */
+.mfp-bg {
+    opacity: 0.9;
+    background: #000;
+    z-index: 9998;
+}
+
+/* 팝업 전체 영역 */
+.mfp-wrap {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 107% !important;
+    height: 100% !important;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+/* 팝업 중앙 정렬 */
+.mfp-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px !important;
+}
+
+/* 팝업창 크기 */
+.mfp-iframe-holder .mfp-content {
+    width: 50vw !important;
+    max-width: 1200px !important;
+    margin: 0 auto;
+}
+
+/* 유튜브 영상 비율 16:9 */
+.mfp-iframe-scaler {
+    width: 100%;
+    height: 0;
+    padding-top: 56.25%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* 실제 영상 */
+.mfp-iframe-scaler iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+    border: 0;
+}
+
+/* 닫기 버튼 */
+.mfp-iframe-holder .mfp-close {
+    top: -40px;
+    right: 0;
+    font-size: 40px;
+    color: #fff;
+    opacity: 1;
+}
+#content .GALLERY { text-align: center; padding: 50px;}
+#content .GALLERY h3{font-size: 3.5rem;  padding: 50px; color: #FFD400;}
+#content .GALLERY p{font-size: var(--font-gnb-size); margin-bottom: 100px;}
+#content .GALLERY{background: #272424;}
+
+#content .GALLERY ul li:nth-child(1){grid-area: a; }
+#content .GALLERY ul li:nth-child(2){grid-area: aa;}
+#content .GALLERY ul li:nth-child(3){grid-area: b;}
+#content .GALLERY ul li:nth-child(4){grid-area: bb;}
+#content .GALLERY ul li:nth-child(5){grid-area: c; }
+#content .GALLERY ul li:nth-child(6){grid-area: cc;}
+#content .GALLERY ul li:nth-child(7){grid-area: d;}
+#content .GALLERY ul{ display: grid;
+                     margin: 0 auto;
+                     grid-template-columns: repeat(4,1fr) ;
+                     grid-auto-rows: auto;
+                     margin-top: 20px;
+                     gap: 10px;
+                     grid-template-areas: 
+                     'a a aa b'
+                     'cc d d bb'
+                     'cc c c c'
+                     ;}
+#content .GALLERY ul img{width: 100%; height: 100%; object-fit: cover; object-position: center; filter: contrast(10%),brightness(80%);
+   filter: brightness(70%); transition: all .3s ease-out;}
+#content .GALLERY ul li{ overflow: hidden;}
+#content .GALLERY ul li:hover img{transform: scale(1.05) rotate(2deg) ; filter: brightness(100%);}
+ #content .GALLERY div >a{ width: 120px; height: 50px; font-size: var(--font-gnb-size); color: #fff;
+                           top: 100px; left: 90%;  text-align: center; margin: 0 auto; margin-top: 50px;}
+   #content .GALLERY div >a:hover{text-shadow: 1px 1px 10px #eec911; scale: 1.1; color: #eec911 ;}
+   #content .GALLERY div .tag::after{content: '';display: block; bottom: 0; right: 0; background: url(../images/main/atag.png) center no-repeat;
+                                       width: 35px; height: 20px; transform: translate(93px,3px);}
+   #content .GALLERY div .tag::before{content: '';display: block; bottom: 0; right: 0; width: 120px; height: 4px;
+                                       transform: translateY(50px); background-color: rgb(184, 184, 184);}
+   #content .GALLERY div .tag:hover::before{box-shadow: 0 0 10px black,0px 0px 10px #FFD400,0 0 5px #eec911; background: #eec911;}
+
+ 
+/* 일반 pc */
+@media screen and (max-width:1280px) {
+      #content .OVERVIEW>div{flex-direction: column;}
+      #content .OVERVIEW div span{width: 100%; margin-bottom: 30px;}
+      #content .OVERVIEW .text_box{width: 100%; margin-bottom: 30px;}
+    #content .OVERVIEW .text_box >p{font-size:0.8rem; text-align: justify; line-height: 1.5; }
+    .OVERVIEW ul li:nth-child(1) p{font-size:0.8rem; font-weight: 400; line-height: 1.8rem; margin: 0 auto;
+                                       width: 92%; height: auto; display: flex; justify-content: space-between; }
+    
+      #content .DMZ div h3 {
+        width:auto;
+        margin-left: 0;
+        padding: 30px 0;}
+      #content .DMZ div> p{width: 100%; margin-left: 0; text-align: justify; padding: 0;}
+       
+      #content .WEAPON .container li dt:first-of-type{font-size: var(--font-gnb-size);  }
+    #content .WEAPON .container li dt:last-of-type{font-size: var(--font-h5-size); 
+      border-top: 1px solid #d1cece;}
+    #content .WEAPON .container li dd{font-size: var(--font-18-size);}
+    
+    #content .OVERVIEW .text_box .txt{font-size: 1.3rem; margin-bottom: 30px;margin-bottom: 30px; font-weight: 600;
+                                    font-family: 'Hitmarker Text', sans-serif;}
+    
+                     #content .WEAPON p{width: 100%; font-size: var(--font-18-size);}
+      #content .WEAPON .container img{width: 100%; height: 100%; object-fit: cover; object-position: center;
+                                    filter: invert(90%)brightness(60%); outline: 1px solid #d1caca; transition: .3s ease-out;}
+        #content .WEAPON .container li dt:last-of-type{width: auto; height: 50px; display: flex; align-items: center;}
+         #content .WEAPON .shoot.scroll .shot img{opacity: 1; width: 30%;}
+  #content .WEAPON .shoot.scroll .shot1 img{width: 20%;}
+  #content .WEAPON .shoot.scroll .shot2 img{ width: 20%; }
+  #content .WEAPON .shoot.scroll .shot3 img{width: 20%;transform: translateX(-350px);}
+    
+}
+
+
+/* 테블릿 */
+@media screen and (max-width:1024px) {
+     #content .OVERVIEW{width: 100%; padding: 50px 20px;}
+     #content .OVERVIEW ul{ display: grid;
+                     grid-template-columns: repeat(2,1fr);
+                     gap: 20px;
+                     grid-template-areas: 
+                     'a a'
+                     'b c'
+                     'd e'
+                     'f f'
+                     ;}
+    #content .OVERVIEW div >a{top: 160px;}
+    #content .OVERVIEW h3{font-size: 2.5rem;}
+    #content .OVERVIEW .text_box >p{font-size:var(--font-12-size); text-align: justify; line-height: 1.5; }
+    #content .OVERVIEW .text_box .txt{font-size: 2.5rem; margin-bottom: 30px;margin-bottom: 30px; font-weight: 600;
+                                    font-family: 'Hitmarker Text', sans-serif; color: #FFD400;}
+    #content .OVERVIEW .text_box >p{font-size:1.5rem; text-align: justify; line-height: 1.5; } 
+    #content .OVERVIEW ul li img{width: 100%; height: 100%; object-fit: cover; object-position:center; }
+    .OVERVIEW ul li:nth-child(1) p{font-size:1.25rem; font-weight: 400; line-height: 1.8rem; margin: 0 auto;
+                                       width: 92%; height: auto; display: flex; justify-content: space-between; }
+    #content .DMZ ul li:nth-child(3){grid-area: c; filter: grayscale(10); }
+    #content .DMZ ul{justify-content: center;
+                   display: grid; grid-template-columns: repeat(2,1fr) ;
+                     grid-auto-rows: auto; 
+                     margin-top: 20px;
+                     grid-template-areas: 
+                     'a b'
+                     'a b'
+                     'c d'
+                     ;}
+    #content .DMZ ul li:nth-child(1){filter: grayscale(0); }
+    #content .DMZ ul li:nth-child(2){filter: grayscale(0); }
+    #content .DMZ ul li:nth-child(3){filter: grayscale(0); }
+    #content .DMZ ul li:nth-child(4){filter: grayscale(0); }
+    #content .DMZ ul dl{bottom: 0; background: none;}
+       #content .WEAPON .container {justify-content: center;
+                    width: 100%;
+                   margin: 0 auto ;
+                     display: grid; 
+                     grid-template-columns: repeat(3,1fr) ;
+                    grid-template-rows: auto ;
+                     gap: 10px;
+                     margin-top: 20px;
+                     grid-template-areas: 
+                     'a a b'
+                     'a a c'
+                     'j i d'
+                     'g g h'
+                     'g g h'
+                     ;}
+  #content .WEAPON .container  li:nth-child(5){grid-area: e; display: none;}
+   #content .WEAPON .container  li:nth-child(6){grid-area: f; display: none;}
+   #content .WEAPON .container  li:nth-child(11){grid-area: k; display: none;}
+  #content .WEAPON .container  li:nth-child(12){grid-area: l; display: none;}
+   #content .WEAPON .container  li:nth-child(13){grid-area: m; display: none;}
+     .WEAPON .img3_txt dl dt{display: block; font-size: var(--font-14-size);} 
+    #content .WEAPON .container li dt:last-of-type{font-size: var(--font-gnb-size);}
+    #content .WEAPON{height: auto;}
+#content .WEAPON .container img{filter: none;}
+#content .TRAILER{padding: 70px 20px;}
+#content .GALLERY ul{
+                     grid-template-columns: repeat(3,1fr) ;
+                  
+                     grid-template-areas: 
+                     'b cc c'
+                     'bb cc a'
+                     'd d d'
+                     ;}
+#content .GALLERY ul li:nth-child(2){display: none;}
+#content .GALLERY ul li:hover img{transform: scale(1); filter: none;}
+#content .GALLERY ul img{filter: none;}
+    }
+
+
+/* 소형 테블릿 */
+@media screen and (max-width:768px) {
+  #content .OVERVIEW .text_box >p{font-size: 1.2rem;}
+	   .mfp-iframe-holder .mfp-content {
+        width: 95vw !important;
+    }
+    .mfp-container {
+        padding: 20px 10px !important;
+    }
+    .OVERVIEW ul li:nth-child(6){display: none;}
+     #content .DMZ ul dl dt{font-size:1.8rem; color: #FFD400; font-weight: 500; }
+   #content .DMZ ul dl dd{font-size: var(--font-18-size); margin-top: 30px;}
+     #content .WEAPON .container {justify-content: center;
+                    width: 100%;
+                   margin: 0 auto ;
+                     display: grid; grid-template-columns: repeat(4,1fr) ;
+                     grid-template-columns: repeat(4, 1fr);
+                    grid-template-rows: 100px ;
+                     gap: 10px;
+                     margin-top: 20px;
+                     grid-template-areas: 
+                     'a a b b'
+                     'a a b b'
+                     'h h g g'
+                     'h h g g'
+                     'i i j j'
+                     'i i j j'
+                     ;}
+    #content .WEAPON .container img{filter: none;}
+    #content .WEAPON .container  li:nth-child(3){display: none;}
+   #content .WEAPON .container  li:nth-child(4){display: none;}
+    #content .WEAPON{height: auto;}
+    #content .DMZ div{padding: 80px 20px;}
+    #content .DMZ ul li:nth-child(3){display: none;}
+    #content .DMZ ul li:nth-child(4){display: none;}
+    #content .DMZ div p{font-size: 1.1rem;}
+    #content .TRAILER p{font-size: 1.1rem;}
+    #content .GALLERY p{font-size: 1.1rem; margin-bottom: 50px;}
+    #content .GALLERY ul{
+                     grid-template-columns: repeat(3,1fr) ;
+                    grid-auto-rows: 300px;
+                     grid-template-areas: 
+                     'bb bb b'
+                     'd d d'
+                     'c c c'
+                     ;}
+    #content .GALLERY ul li:nth-child(6){display: none;}
+    #content .GALLERY ul li:nth-child(1){display: none;}
+}
+
+/* 모바일 */
+@media screen and (max-width:640px) {
+	#content .OVERVIEW em{font-size: 1.3rem;}
+  #content .OVERVIEW .text_box .txt{font-size: 2rem;}
+  .OVERVIEW ul li:nth-child(1){display: none;}
+  #content .WEAPON .container img{width:100%; height: auto;}
+   #content .WEAPON .container {
+                     display: grid; 
+                     grid-template-columns: repeat(1, 1fr);
+                      grid-template-rows: repeat(6, auto) ;
+                     grid-template-areas: 
+                     'a'
+                     'b'
+                     'g'
+                     'h'
+                     'i'
+                     'j'
+                     ;}
+  #content .GALLERY ul{gap: 5px;}
+  
+}
+
+/* 모바일 */
+@media screen and (max-width:480px) {
+  #content .OVERVIEW .text_box{padding: 0;}
+   #content .OVERVIEW em{display: none;}
+#content .OVERVIEW .text_box .txt{font-size: 1.8rem;}
+#content .OVERVIEW .text_box >p{font-size: 1rem;}
+#content .OVERVIEW h3{font-size: 2.3rem; padding-left: 0; padding-top: 50px;}
+#content .OVERVIEW div >a{top:100px}
+#content .DMZ div h3,#content .WEAPON h3,#content .WEAPON h3,#content .GALLERY h3{font-size: 3rem;}
+#content .GALLERY{padding: 50px 20px;}
+#content .GALLERY ul{
+                     grid-template-columns: repeat(2,1fr) ;
+                    grid-auto-rows: 300px;
+                     grid-template-areas: 
+                     'bb bb'
+                     'd d '
+                     'c c '
+                     ;}
+ #content .GALLERY ul li:nth-child(3){display: none;}
+ #footerArea .logo img{width: 300px; height: 20px;}
+ #footerArea img{width: 30%;}
+ #footerArea .logo img:nth-child(2){margin-bottom: 30px; }
+}
+
+
+

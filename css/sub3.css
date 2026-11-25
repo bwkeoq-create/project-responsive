@@ -1,0 +1,77 @@
+.videoBox{width:100%;height:100%; overflow:hidden; position:absolute}
+
+#imgBG{
+
+	position:fixed; /*고정=>fixed/ 스크롤처리=>absolute */
+   left:50%;
+   top:50%; /*오른쪽, 아래에 여백을 두지않고 꽉차게 표시*/
+   width:auto;
+   min-width:100%; /*동영상 너비를 꽉차게*/
+   height:auto;
+   min-height:100%; /*동영상 높이를 꽉차게*/
+  transform:translateX(-50%) translateY(-50%);
+   z-index:-100;
+}
+
+
+
+#content{ width:100%; height: auto; background:rgba(0,0,0,.9);position: relative; padding: 100px 0; 
+         margin: 0 auto;}
+#content h2{position: absolute; top: -500px;
+width: 100%; text-align: center; font-size: 4em; color: #fff; }
+.title{ font-size: var(--font-h4-size); text-align: center; padding: 50px 0; color: #FFD400; margin: 50px 0;}
+.title em{margin-left: 40px; color: #fff ;}
+.box1{border: 5px solid #ccc;
+       width: 90%; margin: 30px auto;}
+
+
+.weapons1,.weapons2,.weapons3,.weapons4,.weapons5,.weapons6
+    {display: flex; justify-content:space-between; width: 90%; margin: 0 auto;
+    background: #333; padding: 100px 0; border-radius: 30px; box-shadow: 2px 2px 10px 5px rgba(160, 159, 159, 0.9); 
+    }
+
+.weaponBox1,.weaponBox2,.weaponBox3,.weaponBox4,.weaponBox5,.weaponBox6
+     {background: url(../images/sub3/sub3_back.png) center no-repeat; 
+        background-size:cover;  width: 35%; height: 100%;}
+section .weapon_box{display: flex; flex-direction: column; justify-content: center;align-items: center ;gap: 15px; padding: 50px 0;}
+section .weapon_box img{width: 80%; animation: weapon 4s infinite ;}
+@keyframes weapon{
+      0%{transform: translateY(-10px) }
+      50%{transform: translateY(10px);}
+      100%{transform: translateY(-10px);}
+}
+.wp5 .weapon_box img{width: 80%; margin: 0 auto; display: block;}
+.wp6 .weapon_box img{width: 80%; margin: 0 auto; display: block;}
+
+section .weapon_box dl dt{font-size: var(--font-h6-size); color: #fff; text-align: center;}
+section .weapon_box dl dd{font-size: var(--font-h6-size); color: #FFD400; text-align: center;}
+
+section .swiper-container{width: 55%;}
+section .swiper-container .swiper-wrapper{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows:1fr;
+    gap: 10px;
+}
+section .swiper-container .swiper-wrapper .swiper-slide img{width: 100%; transition: all .5s;}
+section .swiper-container .swiper-wrapper .swiper-slide:hover img{transform: scale(1.1); filter: brightness(130%) saturate(130%); box-shadow: 3px 1px 30px 1px solid rgba(119, 63, 63, 0.5);}
+
+section .weapon-thumbs6 .swiper-wrapper .swiper-slide img{width: 80%; margin: 0 auto; display: block;}   
+ 
+        
+    
+@media screen and (max-width:1024px) {
+   .weapons1,.weapons2,.weapons3,.weapons4,.weapons5,.weapons6{flex-direction: column;}
+   .weaponBox1,.weaponBox2,.weaponBox3,.weaponBox4,.weaponBox5,.weaponBox6{width: 80%; margin:0 auto 30px;}
+   section .swiper-container{width: 80%;margin:0 auto 30px;}
+  
+}
+
+@media screen and (max-width:640px) {
+    section .title{font-size: 2rem; text-align: center;}
+    section .title em{display: block; margin-left:0}
+
+    .weaponBox1,.weaponBox2,.weaponBox3,.weaponBox4,.weaponBox5,.weaponBox6{width: 90%;}
+    section .swiper-container{width: 90%;}
+  
+}
