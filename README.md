@@ -3,23 +3,13 @@
 기획 및 디자인부터 마크업(프로그래밍)까지 100% 기여하였습니다. <br>
 
 ## 🔗 PORTFOLIO URL
-* 기업형 웹 프로젝트(해태)
-    + http://bbeunbin.mycafe24.com/
-* 반응형 웹 프로젝트(박물관) 
-    + http://bbeunbin.mycafe24.com/media/
-* React SPA 프로젝트(기상청)
-    + https://react-project-3c3bd.web.app/
-* 프로필 및 포트폴리오 링크
-    + http://bbeunbin.mycafe24.com/profile/
-
+* 반응형 웹 프로젝트(모던워페어사) 
+    + http://kbw0503.mycafe24.com/media/
 
 ### ⚒️ SKILLS
 * HTML
 * CSS(less/sass)
 * JavaScript(ES6), JQuery, TypeScript, (Ajax & Json)
-* React
-* PHP / My-SQL
-* Firebase(firestore database & hosting) 
 * Git & Github
 * Photoshop/Illustrator/Figma
 
